@@ -1,0 +1,415 @@
+{
+  "attribution": "Open-Meteo Geocoding API / GeoNames, WGS84 city locations; retrieved 2026-11-23",
+  "cities": [
+    {
+      "city": "上海",
+      "province": "Shanghai",
+      "latitude": 31.22222,
+      "longitude": 121.45806,
+      "geonames_id": 1796236,
+      "source_name": "Shanghai",
+      "feature": "PPLA",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Shanghai&count=20&countryCode=CN&language=en"
+    },
+    {
+      "city": "南京",
+      "province": "Jiangsu",
+      "latitude": 32.06167,
+      "longitude": 118.77778,
+      "geonames_id": 1799962,
+      "source_name": "Nanjing",
+      "feature": "PPLA",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Nanjing%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "苏州",
+      "province": "Jiangsu",
+      "latitude": 31.30408,
+      "longitude": 120.59538,
+      "geonames_id": 1886760,
+      "source_name": "Suzhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Suzhou%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "无锡",
+      "province": "Jiangsu",
+      "latitude": 31.56887,
+      "longitude": 120.28857,
+      "geonames_id": 1790923,
+      "source_name": "Wuxi",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Wuxi%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "常州",
+      "province": "Jiangsu",
+      "latitude": 31.77359,
+      "longitude": 119.95401,
+      "geonames_id": 1815456,
+      "source_name": "Changzhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Changzhou%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "镇江",
+      "province": "Jiangsu",
+      "latitude": 32.21086,
+      "longitude": 119.45508,
+      "geonames_id": 1784642,
+      "source_name": "Zhenjiang",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Zhenjiang%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "南通",
+      "province": "Jiangsu",
+      "latitude": 32.03028,
+      "longitude": 120.87472,
+      "geonames_id": 1799722,
+      "source_name": "Nantong",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Nantong%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "扬州",
+      "province": "Jiangsu",
+      "latitude": 32.39722,
+      "longitude": 119.43583,
+      "geonames_id": 1787227,
+      "source_name": "Yangzhou",
+      "feature": "PPL",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Yangzhou%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "泰州",
+      "province": "Jiangsu",
+      "latitude": 32.49069,
+      "longitude": 119.90812,
+      "geonames_id": 1793505,
+      "source_name": "Taizhou",
+      "feature": "PPLA3",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Taizhou%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "盐城",
+      "province": "Jiangsu",
+      "latitude": 33.3575,
+      "longitude": 120.1573,
+      "geonames_id": 1787746,
+      "source_name": "Yancheng",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Yancheng%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "淮安",
+      "province": "Jiangsu",
+      "latitude": 33.58861,
+      "longitude": 119.01917,
+      "geonames_id": 1797873,
+      "source_name": "Huai'an",
+      "feature": "PPL",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Huai%E2%80%99an&count=20&countryCode=CN&language=en"
+    },
+    {
+      "city": "宿迁",
+      "province": "Jiangsu",
+      "latitude": 33.94917,
+      "longitude": 118.29583,
+      "geonames_id": 1793771,
+      "source_name": "Suqian",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Suqian%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "徐州",
+      "province": "Jiangsu",
+      "latitude": 34.20442,
+      "longitude": 117.28386,
+      "geonames_id": 10630003,
+      "source_name": "Xuzhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Xuzhou%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "连云港",
+      "province": "Jiangsu",
+      "latitude": 34.59845,
+      "longitude": 119.21556,
+      "geonames_id": 10859300,
+      "source_name": "Lianyungang",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Lianyungang%2C+Jiangsu&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "杭州",
+      "province": "Zhejiang",
+      "latitude": 30.29365,
+      "longitude": 120.16142,
+      "geonames_id": 1808926,
+      "source_name": "Hangzhou",
+      "feature": "PPLA",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Hangzhou%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "宁波",
+      "province": "Zhejiang",
+      "latitude": 29.87819,
+      "longitude": 121.54945,
+      "geonames_id": 1799397,
+      "source_name": "Ningbo",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Ningbo%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "温州",
+      "province": "Zhejiang",
+      "latitude": 27.99942,
+      "longitude": 120.66682,
+      "geonames_id": 1791388,
+      "source_name": "Wenzhou",
+      "feature": "PPLA3",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Wenzhou%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "嘉兴",
+      "province": "Zhejiang",
+      "latitude": 30.7522,
+      "longitude": 120.75,
+      "geonames_id": 1805953,
+      "source_name": "Jiaxing",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Jiaxing%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "湖州",
+      "province": "Zhejiang",
+      "latitude": 30.8703,
+      "longitude": 120.0933,
+      "geonames_id": 1806535,
+      "source_name": "Huzhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Huzhou%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "绍兴",
+      "province": "Zhejiang",
+      "latitude": 30.00237,
+      "longitude": 120.57864,
+      "geonames_id": 1795855,
+      "source_name": "Shaoxing",
+      "feature": "PPLA3",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Shaoxing%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "金华",
+      "province": "Zhejiang",
+      "latitude": 29.10678,
+      "longitude": 119.64421,
+      "geonames_id": 1805528,
+      "source_name": "Jinhua",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Jinhua%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "衢州",
+      "province": "Zhejiang",
+      "latitude": 28.95944,
+      "longitude": 118.86861,
+      "geonames_id": 1797264,
+      "source_name": "Quzhou",
+      "feature": "PPL",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Quzhou%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "舟山",
+      "province": "Zhejiang",
+      "latitude": 29.98869,
+      "longitude": 122.20488,
+      "geonames_id": 1886762,
+      "source_name": "Zhoushan",
+      "feature": "PPLA3",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Zhoushan%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "台州",
+      "province": "Zhejiang",
+      "latitude": 28.66266,
+      "longitude": 121.43312,
+      "geonames_id": 8400694,
+      "source_name": "Taizhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Taizhou%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "丽水",
+      "province": "Zhejiang",
+      "latitude": 28.46042,
+      "longitude": 119.91029,
+      "geonames_id": 1803245,
+      "source_name": "Lishui",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Lishui%2C+Zhejiang&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "合肥",
+      "province": "Anhui",
+      "latitude": 31.86389,
+      "longitude": 117.28083,
+      "geonames_id": 1808722,
+      "source_name": "Hefei",
+      "feature": "PPLA",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Hefei%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "芜湖",
+      "province": "Anhui",
+      "latitude": 31.35259,
+      "longitude": 118.42947,
+      "geonames_id": 1791236,
+      "source_name": "Wuhu",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Wuhu%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "蚌埠",
+      "province": "Anhui",
+      "latitude": 32.94083,
+      "longitude": 117.36083,
+      "geonames_id": 1816440,
+      "source_name": "Bengbu",
+      "feature": "PPL",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Bengbu%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "淮南",
+      "province": "Anhui",
+      "latitude": 32.62639,
+      "longitude": 116.99694,
+      "geonames_id": 1807681,
+      "source_name": "Huainan",
+      "feature": "PPL",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Huainan%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "马鞍山",
+      "province": "Anhui",
+      "latitude": 31.68579,
+      "longitude": 118.51008,
+      "geonames_id": 1801620,
+      "source_name": "Ma’anshan",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Ma%E2%80%99anshan&count=20&countryCode=CN&language=en"
+    },
+    {
+      "city": "淮北",
+      "province": "Anhui",
+      "latitude": 33.97444,
+      "longitude": 116.79167,
+      "geonames_id": 1807700,
+      "source_name": "Huaibei",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Huaibei%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "铜陵",
+      "province": "Anhui",
+      "latitude": 30.95,
+      "longitude": 117.78333,
+      "geonames_id": 1792621,
+      "source_name": "Tongling",
+      "feature": "PPLA3",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Tongling%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "安庆",
+      "province": "Anhui",
+      "latitude": 30.51365,
+      "longitude": 117.04723,
+      "geonames_id": 1817993,
+      "source_name": "Anking",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Anqing%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "黄山",
+      "province": "Anhui",
+      "latitude": 29.71139,
+      "longitude": 118.3125,
+      "geonames_id": 1792359,
+      "source_name": "Huangshan City",
+      "feature": "PPLA3",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Huangshan%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "滁州",
+      "province": "Anhui",
+      "latitude": 32.32194,
+      "longitude": 118.29778,
+      "geonames_id": 1814757,
+      "source_name": "Chuzhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Chuzhou%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "阜阳",
+      "province": "Anhui",
+      "latitude": 32.9,
+      "longitude": 115.81667,
+      "geonames_id": 1810845,
+      "source_name": "Fuyang",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Fuyang%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "宿州",
+      "province": "Anhui",
+      "latitude": 33.63611,
+      "longitude": 116.97889,
+      "geonames_id": 1793743,
+      "source_name": "Suzhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Suzhou%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "六安",
+      "province": "Anhui",
+      "latitude": 31.73561,
+      "longitude": 116.51688,
+      "geonames_id": 1802206,
+      "source_name": "Lu'an",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Lu%E2%80%99an&count=20&countryCode=CN&language=en"
+    },
+    {
+      "city": "亳州",
+      "province": "Anhui",
+      "latitude": 33.87722,
+      "longitude": 115.77028,
+      "geonames_id": 1816234,
+      "source_name": "Bozhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Bozhou%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "池州",
+      "province": "Anhui",
+      "latitude": 30.66134,
+      "longitude": 117.47783,
+      "geonames_id": 1814934,
+      "source_name": "Chizhou",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Chizhou%2C+Anhui&count=20&language=en&countryCode=CN"
+    },
+    {
+      "city": "宣城",
+      "province": "Anhui",
+      "latitude": 30.9525,
+      "longitude": 118.75528,
+      "geonames_id": 1788081,
+      "source_name": "Xuancheng",
+      "feature": "PPLA2",
+      "url": "https://geocoding-api.open-meteo.com/v1/search?name=Xuancheng%2C+Anhui&count=20&language=en&countryCode=CN"
+    }
+  ]
+}

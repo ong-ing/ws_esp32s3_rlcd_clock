@@ -1,0 +1,26 @@
+{
+  "version": "v044_camp_boundary",
+  "framework": "ESP-IDF v5.5.5",
+  "target": "esp32s3",
+  "application_bytes": 1647216,
+  "polarity_command": "0x20",
+  "scene_origin": [
+    196,
+    49
+  ],
+  "live_time": "SNTP UTC+8",
+  "weather": "Open-Meteo current and daily min/max",
+  "default_city": "Shanghai",
+  "contains_wifi_password": false,
+  "physical_board_test": false,
+  "live_api_test": false,
+  "dirty_region_writes": true,
+  "default_bssid_binding": false,
+  "current_mac_wifi_detection": false,
+  "camp_reference": "halo_v032_fire_edge.html",
+  "scene_ticks": 3360,
+  "fire_frames": 10,
+  "device_name": "HUANGLE",
+  "panel_hpm_hz": 25.5,
+  "battery": "ADC1_CH3 calibrated voltage estimate"
+}

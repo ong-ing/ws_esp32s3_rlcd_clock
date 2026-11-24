@@ -1,8 +1,8 @@
 {
-  "version": "v046_compact_status_icons",
+  "version": "v047_shared_wifi_icon",
   "framework": "ESP-IDF v5.5.5",
   "target": "esp32s3",
-  "application_bytes": 1647424,
+  "application_bytes": 1647360,
   "polarity_command": "0x20",
   "scene_origin": [
     196,

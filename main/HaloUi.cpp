@@ -35,8 +35,8 @@ void top(u8g2_t *u, const Model &m) {
   snprintf(values[2],24,"TIME %s%s",displayTime,period);
   const int x[]={4,107,194};
   for(int i=0;i<3;i++)label(u,x[i],16,values[i],u8g2_font_wqy12_t_gb2312);
-  u8g2_DrawXBMP(u,330,5,17,13,WIFI_TOP);
-  if(!m.connected)u8g2_DrawLine(u,330,4,346,18);
+  u8g2_DrawXBMP(u,333,6,14,11,WIFI_MENU);
+  if(!m.connected)u8g2_DrawLine(u,333,5,346,17);
   u8g2_DrawHLine(u,355,5,34);
   u8g2_DrawHLine(u,355,18,34);
   u8g2_DrawVLine(u,355,5,14);

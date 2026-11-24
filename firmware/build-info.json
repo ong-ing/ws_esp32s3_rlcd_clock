@@ -1,8 +1,8 @@
 {
-  "version": "v044_camp_boundary",
+  "version": "v046_compact_status_icons",
   "framework": "ESP-IDF v5.5.5",
   "target": "esp32s3",
-  "application_bytes": 1647216,
+  "application_bytes": 1647424,
   "polarity_command": "0x20",
   "scene_origin": [
     196,

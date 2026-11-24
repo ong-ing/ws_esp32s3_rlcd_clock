@@ -1,5 +1,6 @@
 #include "HaloUi.h"
 #include "HaloCamp.h"
+#include "HaloStatusIcons.h"
 #include "HaloCities.h"
 #include <stdio.h>
 #include <string.h>
@@ -27,38 +28,29 @@ void top(u8g2_t *u, const Model &m) {
   u8g2_SetDrawColor(u, 1);
   u8g2_DrawBox(u, 0, 0, 400, 23);
   u8g2_SetDrawColor(u, 0);
-  char values[4][24];
+  char values[3][24];
   snprintf(values[0],24,m.sensorValid?"TEMP %.1fC":"TEMP --.-C",m.temperature);
   snprintf(values[1],24,m.sensorValid?"HUM %.0f%%":"HUM --%%",m.humidity);
   char displayTime[6],period[3];clockText(m,displayTime,sizeof(displayTime),period,sizeof(period));
   snprintf(values[2],24,"TIME %s%s",displayTime,period);
-  snprintf(values[3],24,m.batteryValid?"BAT %u%%":"BAT --%%",unsigned(m.batteryPercent));
-  const int x[]={4,107,194,295};
-  for(int i=0;i<4;i++)label(u,x[i],16,values[i],u8g2_font_wqy12_t_gb2312);
-  // Balanced 17x15 Wi-Fi glyph with three arcs and a small dot.
-  static const char *wifi[] = {
-    "00000111111100000",
-    "00011111111111000",
-    "00111000000011100",
-    "01100000000000110",
-    "11000000000000011",
-    "00000111111100000",
-    "00011111111111000",
-    "00111000000011100",
-    "00000000000000000",
-    "00000011111000000",
-    "00000111011100000",
-    "00000000000000000",
-    "00000000100000000",
-    "00000001110000000",
-    "00000000100000000"
-  };
-  for(int y=0;y<15;y++)for(int x=0;x<17;x++)
-    if(wifi[y][x]=='1')u8g2_DrawPixel(u,377+x,4+y);
-  if(!m.connected){
-    u8g2_DrawLine(u,377,3,394,19);
-    u8g2_DrawLine(u,377,4,394,20);
-  }
+  const int x[]={4,107,194};
+  for(int i=0;i<3;i++)label(u,x[i],16,values[i],u8g2_font_wqy12_t_gb2312);
+  u8g2_DrawXBMP(u,330,5,17,13,WIFI_TOP);
+  if(!m.connected)u8g2_DrawLine(u,330,4,346,18);
+  u8g2_DrawHLine(u,355,5,34);
+  u8g2_DrawHLine(u,355,18,34);
+  u8g2_DrawVLine(u,355,5,14);
+  u8g2_DrawVLine(u,388,5,4);
+  u8g2_DrawVLine(u,388,14,5);
+  u8g2_DrawHLine(u,388,8,4);
+  u8g2_DrawVLine(u,391,8,7);
+  u8g2_DrawHLine(u,388,14,4);
+  char battery[8];
+  if(m.batteryValid)snprintf(battery,sizeof(battery),"%u%%",unsigned(m.batteryPercent));
+  else snprintf(battery,sizeof(battery),"--%%");
+  u8g2_SetFont(u,u8g2_font_wqy12_t_gb2312);
+  int textWidth=u8g2_GetStrWidth(u,battery);
+  label(u,355+(34-textWidth)/2,16,battery);
 
   u8g2_SetDrawColor(u, 1);
 }
@@ -107,11 +99,13 @@ void home(u8g2_t *u, const Model &m) {
   label(u, 12, 236, update);
   for (int i = 0; i < 3; i++) {
     int x = 8 + i * 130;
+    u8g2_DrawFrame(u,x,241,124,35);
     if (m.selected == i) {
       u8g2_DrawBox(u, x, 241, 124, 35);
       u8g2_SetDrawColor(u, 0);
     }
-    icon(u, x + 12, 251, i);
+    if(i==0)u8g2_DrawXBMP(u,x+12,253,14,11,WIFI_MENU);
+    else icon(u, x + 12, 251, i);
     label(u, x + 33, 264, entries[i], u8g2_font_wqy16_t_gb2312);
     u8g2_SetDrawColor(u, 1);
   }

@@ -6,7 +6,7 @@
 
 **Windows环境未提供**
 
-- 本地开发和编译环境准备：[本次交付记录](docs/macos_esp32开发环境初始化操作手册.md)
+- 本地开发和编译环境准备：[macos_esp32开发环境初始化操作手册](docs/macos_esp32开发环境初始化操作手册.md)
 
 设备名称可通过 `/boot/setting.json` 的 `device.name` 自定义。
 

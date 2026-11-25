@@ -15,7 +15,7 @@ with tempfile.TemporaryDirectory() as td:
    assert valid
    assert result[2]['city']=='杭州'
  check(base,True)
- for field,value in [('latitude',True),('latitude',91),('longitude',float('nan')),('city','城'*9)]:
+ for field,value in [('latitude',True),('latitude',91),('longitude',float('nan')),('city','城'*17)]:
   test=json.loads(json.dumps(base));test['weather'][field]=value;check(test,False)
  test=json.loads(json.dumps(base));test['wifi']['password']='bad';check(test,False)
  test=json.loads(json.dumps(base));test['wifi']['password']='';check(test,True)

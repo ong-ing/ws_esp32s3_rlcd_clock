@@ -45,7 +45,7 @@ for w in range(20):
 Path('.asset-build/frames.bin').write_bytes(b''.join(assets))
 out=Path('main/CampFrames.h')
 with out.open('w') as f:
- f.write('#pragma once\n#include <stdint.h>\n// Generated from HALO V0.9: 20 weather scenes, eight frames each, LSB-first XBM.\nstatic constexpr unsigned CAMP_WIDTH=202, CAMP_HEIGHT=187, CAMP_BYTES=4862;\nstatic const uint8_t CAMP_FRAMES[20][8][CAMP_BYTES] = {\n')
+ f.write('#pragma once\n#include <stdint.h>\n// Generated from RLCD_CLOCK V0.9: 20 weather scenes, eight frames each, LSB-first XBM.\nstatic constexpr unsigned CAMP_WIDTH=202, CAMP_HEIGHT=187, CAMP_BYTES=4862;\nstatic const uint8_t CAMP_FRAMES[20][8][CAMP_BYTES] = {\n')
  for w in range(20):
   f.write('{\n')
   for frame in assets[w*8:w*8+8]:

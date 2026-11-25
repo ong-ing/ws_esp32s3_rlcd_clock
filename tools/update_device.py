@@ -18,7 +18,7 @@ def load_config(path):
         if not isinstance(ssid,str) or not 1<=len(ssid.encode())<=32:raise ValueError()
         if not isinstance(password,str) or (password and not 8<=len(password.encode())<=63):raise ValueError()
         city=weather['city'];lat=weather['latitude'];lon=weather['longitude']
-        if not isinstance(city,str) or not 1<=len(city.encode())<=24:raise ValueError()
+        if not isinstance(city,str) or not 1<=len(city.encode())<=48:raise ValueError()
         if isinstance(lat,bool) or isinstance(lon,bool) or not isinstance(lat,(int,float)) or not isinstance(lon,(int,float)) or not -90<=lat<=90 or not -180<=lon<=180:raise ValueError()
         port=config.get('port','/dev/cu.usbmodem1101')
         if not isinstance(port,str) or not port.startswith('/dev/cu.'):raise ValueError()
@@ -40,14 +40,24 @@ def main():
     parser.add_argument('--config',type=Path,default=None)
     parser.add_argument('--port',default=None)
     parser.add_argument('--flash',action='store_true')
+    parser.add_argument('--provision',action='store_true',help='Explicitly send legacy serial Wi-Fi/city settings')
     args=parser.parse_args()
-    config_path=args.config or (root/'halo.config.local.json')
-    if args.config is None and not config_path.exists():config_path=root/'halo.config.json'
-    args.ssid,password,weather,configured_port=load_config(config_path)
+    config_path=args.config or (root/'device.config.local.json')
+    if args.config is None and not config_path.exists():config_path=root/'device.config.json'
+    if args.flash and not args.provision:
+        # Flashing must also work when credentials exist only on the TF card.
+        host_config=json.loads(config_path.read_text(encoding='utf-8-sig'))
+        configured_port=host_config.get('port','/dev/cu.usbmodem1101')
+        if not isinstance(configured_port,str) or not configured_port.startswith('/dev/cu.'):
+            raise RuntimeError('配置中的串口 port 无效')
+        args.ssid,password,weather='', '', {'city':'开机配置'}
+    else:
+        args.ssid,password,weather,configured_port=load_config(config_path)
     args.port=args.port or configured_port
     args.bssid=''
     print('读取本地配置：'+config_path.name)
-    print('目标 Wi-Fi：'+args.ssid+'；天气城市：'+weather['city'])
+    if not args.flash or args.provision:
+        print('目标 Wi-Fi：'+args.ssid+'；天气城市：'+weather['city'])
     import serial
     if args.flash:
         for line in (root/'firmware/SHA256SUMS').read_text().splitlines():
@@ -59,8 +69,11 @@ def main():
                         '--flash_mode','dio','--flash_size','16MB','--flash_freq','80m',
                         '0x0',str(root/'firmware/bootloader.bin'),
                         '0x8000',str(root/'firmware/partition-table.bin'),
-                        '0x10000',str(root/'firmware/halo_home.bin')],check=True)
+                        '0x10000',str(root/'firmware/rlcd_clock.bin')],check=True)
         time.sleep(2)
+        if not args.provision:
+            print("烧录完成。开机自动读取 TF /boot/setting.json；无有效文件时使用固件默认配置。")
+            return
     port = serial.Serial()
     port.port=args.port;port.baudrate=115200;port.timeout=.3;port.write_timeout=3
     port.dtr=False;port.rts=False
@@ -96,11 +109,11 @@ def main():
                 if 'WIFI_CONFIG_SAVED' in text:flags['saved']=True;print('Wi-Fi 配置已保存到开发板。')
                 elif 'WIFI_CONNECTED' in text:flags['wifi']=True;print('Wi-Fi 已连接。')
                 elif 'SNTP_SYNC_OK' in text:flags['time']=True;print('北京时间已同步。')
-                elif 'HALO_WEATHER' in text and 'parsed=1' in text:flags['weather']=True;print('真实天气与最低/最高气温已更新。')
+                elif 'RLCD_CLOCK_WEATHER' in text and 'parsed=1' in text:flags['weather']=True;print('真实天气与最低/最高气温已更新。')
                 elif 'WIFI_DISCONNECTED' in text:
                     reason=re.search(r'reason=(\d+)',text)
                     if reason:print('Wi-Fi 失败原因 '+reason.group(1)+'：'+wifi_failure(int(reason.group(1))))
-                elif 'HALO_WEATHER' in text or 'WIFI_CONFIG_REJECTED' in text or 'WIFI_SAVE_FAILED' in text:print(text)
+                elif 'RLCD_CLOCK_WEATHER' in text or 'WIFI_CONFIG_REJECTED' in text or 'WIFI_SAVE_FAILED' in text:print(text)
             if all(flags.values()):print('完成。后续开机自动重连。');return
             if len(pending)>8192:pending=pending[-4096:]
         print('等待超时，已确认：'+json.dumps(flags,ensure_ascii=False))

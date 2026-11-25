@@ -2,7 +2,7 @@ from pathlib import Path
 import re,base64,io,json,math,sys
 from PIL import Image,ImageDraw
 root=Path(__file__).resolve().parent.parent; html=Path(sys.argv[1]).read_text()
-(root/'design/halo_v032_fire_edge.html').write_text(html)
+(root/'design/rlcd_clock_v032_fire_edge.html').write_text(html)
 images=[Image.open(io.BytesIO(base64.b64decode(s))).convert('RGBA') for s in re.findall(r"'(iVBOR[^']+)'",html[html.index('const fireFrames='):html.index('let campLoaded')])]
 bg=Image.open(io.BytesIO(base64.b64decode(re.search(r"campArt.src='data:image/png;base64,([^']+)",html)[1]))).convert('RGBA')
 assert bg.size==(202,187) and len(images)==10

@@ -1,9 +1,9 @@
-#include "HaloWeatherData.h"
+#include "ClockWeatherData.h"
 #include "cJSON.h"
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
-using namespace halo;
+using namespace rlcd_clock;
 static const int64_t NOW=1795320000;
 static const char *sample="{\"utc_offset_seconds\":28800,\"current\":{\"time\":1795320000,\"temperature_2m\":12.5,\"relative_humidity_2m\":66,\"wind_speed_10m\":8.2,\"weather_code\":73},\"daily\":{\"time\":[1795276800],\"temperature_2m_min\":[8.0],\"temperature_2m_max\":[15.0]}}";
 static bool parseTree(cJSON *tree,WeatherData &out){char *body=cJSON_PrintUnformatted(tree);bool result=parseWeatherJson(body,strlen(body),NOW,out);cJSON_free(body);return result;}

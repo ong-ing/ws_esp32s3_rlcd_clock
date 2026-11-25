@@ -1,6 +1,6 @@
 #pragma once
 #include <stdint.h>
-// Generated from HALO V0.9: 20 weather scenes, eight frames each, LSB-first XBM.
+// Generated from RLCD_CLOCK V0.9: 20 weather scenes, eight frames each, LSB-first XBM.
 static constexpr unsigned CAMP_WIDTH=202, CAMP_HEIGHT=187, CAMP_BYTES=4862;
 static const uint8_t CAMP_FRAMES[20][8][CAMP_BYTES] = {
 {

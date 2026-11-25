@@ -1,8 +1,8 @@
 {
-  "version": "v047_shared_wifi_icon",
+  "version": "v048_tf_config_files_national_cities",
   "framework": "ESP-IDF v5.5.5",
   "target": "esp32s3",
-  "application_bytes": 1647360,
+  "application_bytes": 1743520,
   "polarity_command": "0x20",
   "scene_origin": [
     196,
@@ -11,16 +11,19 @@
   "live_time": "SNTP UTC+8",
   "weather": "Open-Meteo current and daily min/max",
   "default_city": "Shanghai",
-  "contains_wifi_password": false,
+  "contains_wifi_password": true,
   "physical_board_test": false,
   "live_api_test": false,
   "dirty_region_writes": true,
   "default_bssid_binding": false,
   "current_mac_wifi_detection": false,
-  "camp_reference": "halo_v032_fire_edge.html",
+  "camp_reference": "rlcd_clock_v032_fire_edge.html",
   "scene_ticks": 3360,
   "fire_frames": 10,
-  "device_name": "HUANGLE",
+  "device_name": "configured by device.name",
   "panel_hpm_hz": 25.5,
-  "battery": "ADC1_CH3 calibrated voltage estimate"
+  "battery": "ADC1_CH3 calibrated voltage estimate",
+  "boot_config": "/boot/setting.json",
+  "city_locations": 380,
+  "province_groups": 34
 }

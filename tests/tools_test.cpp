@@ -1,8 +1,8 @@
-#include "HaloModel.h"
+#include "ClockModel.h"
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
-using namespace halo;
+using namespace rlcd_clock;
 int main(){
  Model m; m.selected=2;navigate(m,false,Press::Short);assert(m.page==Page::Tools);
  navigate(m,false,Press::Short);assert(m.page==Page::Stopwatch);

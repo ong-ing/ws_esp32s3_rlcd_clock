@@ -1,4 +1,4 @@
-#include "HaloCamp.h"
+#include "ClockCamp.h"
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
@@ -12,12 +12,12 @@ int main(){
  u8g2_SetBitmapMode(&u,1);
  unsigned count=0;
  for(unsigned weather=0;weather<20;weather++)for(unsigned frame=0;frame<3360;frame+=37){
-  u8g2_ClearBuffer(&u);halo::camp::draw(&u,weather,frame);
+  u8g2_ClearBuffer(&u);rlcd_clock::camp::draw(&u,weather,frame);
   for(int y=0;y<300;y++)for(int x=0;x<400;x++)
    if(x<196||x>=396||y<49||y>=236)assert(!(pixels[y/8*400+x]&(1<<(y%8))));
   memcpy(expected,pixels,sizeof(pixels));
-  halo::camp::draw(&u,(weather+3)%20,(frame+11)%3360);
-  halo::camp::draw(&u,weather,frame);
+  rlcd_clock::camp::draw(&u,(weather+3)%20,(frame+11)%3360);
+  rlcd_clock::camp::draw(&u,weather,frame);
   assert(memcmp(expected,pixels,sizeof(pixels))==0);count++;
  }
  u8g2_DrawPixel(&u,399,299);assert(pixels[(299/8)*400+399]&(1<<(299%8)));

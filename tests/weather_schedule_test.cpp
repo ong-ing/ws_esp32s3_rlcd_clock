@@ -1,7 +1,7 @@
-#include "HaloWeatherSchedule.h"
+#include "ClockWeatherSchedule.h"
 #include <assert.h>
 #include <stdio.h>
-using namespace halo;
+using namespace rlcd_clock;
 int main(){
  const unsigned periods[]={15,30,60,90};
  for(unsigned p:periods){WeatherSchedule s;s.setMinutes(p);assert(s.ready(0));s.begin(0);s.finish(100,true,200);assert(!s.ready(100+int64_t(p)*60000000-1));assert(s.ready(100+int64_t(p)*60000000));}

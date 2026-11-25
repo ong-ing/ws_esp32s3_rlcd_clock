@@ -1,9 +1,9 @@
-#include "HaloModel.h"
-#include "HaloCities.h"
+#include "ClockModel.h"
+#include "ClockCities.h"
 #include <assert.h>
 #include <string.h>
 #include <stdio.h>
-using namespace halo;
+using namespace rlcd_clock;
 int main(){
  Model m;char time[6],period[3];
  m.preferences.hour12=1;clockText(m,time,6,period,3);assert(strcmp(time,"--:--")==0&&!period[0]);
@@ -23,7 +23,8 @@ int main(){
  for(int i=0;i<15;i++)navigate(m,true,Press::Short);
  navigate(m,false,Press::Short);assert(m.cityRequest==40&&m.page==Page::Settings&&strcmp(CITIES[m.cityRequest].name,"宣城")==0);
  m.cityRequest=-1;m.selected=2;navigate(m,false,Press::Short);navigate(m,false,Press::Long);assert(m.cityRequest==-1&&m.selected==2);
- assert(CITY_COUNT==41&&CITY_COUNTS[0]+CITY_COUNTS[1]+CITY_COUNTS[2]+CITY_COUNTS[3]==41);
+ assert(CITY_COUNT==380&&PROVINCE_COUNT==34);
+ unsigned total=0;for(unsigned province=0;province<PROVINCE_COUNT;province++){assert(CITY_STARTS[province]==total&&CITY_COUNTS[province]>0);total+=CITY_COUNTS[province];m.page=Page::Provinces;m.selected=province;navigate(m,false,Press::Short);assert(m.page==Page::Cities);m.selected=CITY_COUNTS[province]-1;navigate(m,false,Press::Short);assert(m.cityRequest==int(total-1));}assert(total==CITY_COUNT);
  assert(strcmp(CITIES[8].name,"泰州")==0&&strcmp(CITIES[23].name,"台州")==0&&CITIES[8].latitude>CITIES[23].latitude);
  puts("PASS all-city paging, confirmation, cancellation and province separation");
  m.page=Page::Settings;m.selected=3;

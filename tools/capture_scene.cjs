@@ -19,6 +19,6 @@ class RecordingCanvas{
  createPattern(c){return {density:c.ctx.ops.filter(o=>o.style==='#000').length}}
 }
 const g=new RecordingCanvas();const context={g,state:{weather:0,frame:0},document:{createElement:()=>{const ctx=new RecordingCanvas();return {ctx,getContext:()=>ctx}}},Math};vm.createContext(context);
-let html=fs.readFileSync('design/halo_v09.html','utf8');let code=html.slice(html.indexOf('const weather='),html.indexOf('function text('));vm.runInContext(code,context);
+let html=fs.readFileSync('design/rlcd_clock_v09.html','utf8');let code=html.slice(html.indexOf('const weather='),html.indexOf('function text('));vm.runInContext(code,context);
 for(let w=0;w<20;w++)for(let f=0;f<8;f++){g.ops=[];context.state.weather=w;context.state.frame=f*2;vm.runInContext('drawScene()',context);fs.writeFileSync(`.asset-build/${w}-${f}.json`,JSON.stringify(g.ops))}
 console.log('Captured 160 native vector frames from approved HTML scene');

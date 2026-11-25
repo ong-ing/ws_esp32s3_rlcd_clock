@@ -2,13 +2,43 @@
 
 微雪 ESP32-S3-RLCD-4.2，400×300 单色横屏，U8g2 / ST7305。
 
-本版支持 TF 卡开机配置、只读文本文件管理、全国城市选择。设备名称可通过 `/boot/setting.json` 的 `device.name` 自定义。
+**开发和编译环境：Apple M1 MacOS_27.0.1** 
 
-- 更新入口：`Device_Update.command`
-- 编译默认配置：`device.config.json`
-- TF 配置模板：`examples/boot/setting.json`
-- 操作说明、配置优先级、限制与实机验收：[使用说明](使用说明.md)
-- 模块与验证记录：[本次交付记录](本次交付记录.md)
+**Windows环境未提供**
+
+- 本地开发和编译环境准备：[本次交付记录](docs/macos_esp32开发环境初始化操作手册.md)
+
+设备名称可通过 `/boot/setting.json` 的 `device.name` 自定义。
+
+- 更新入口：`Device_Update.command` MacOS直接双击执行该文件即可
+- 编译默认配置：`device.config.json` 包含默认设备名，天气城市，wifi配置等(port改为实际电脑能读到的串口号)
+```
+{
+  "port": "/dev/cu.usbmodem1101",
+  "wifi": {
+    "ssid": "ZTE_LE",
+    "password": "huangle@1994"
+  },
+  "weather": {
+    "city": "芜湖",
+    "latitude": 31.3536,
+    "longitude": 118.4277
+  },
+  "device": {
+    "name": "HUANGLE"
+  }
+}
+```
+- TF 配置模板：`examples/boot/setting.json` 配置优先级高于device.config.json，每次开机从TF卡中读取。
+```
+{
+  "device": { "name": "HUANGLE" },
+  "wifi": { "ssid": "YOUR_WIFI", "password": "YOUR_PASSWORD" },
+  "weather": { "city": "芜湖", "latitude": 31.3536, "longitude": 118.4277 }
+}
+
+```
+- 操作说明、配置优先级、限制与实机验收：[使用说明](docs/使用说明.md)
 
 加载 ESP-IDF 5.5.5 环境后，在项目目录执行 `idf.py build`。更改默认配置后应重新编译，双击更新入口只烧录 `firmware/` 中已经打包的固件。
 
